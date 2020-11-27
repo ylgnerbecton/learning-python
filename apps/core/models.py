@@ -1,6 +1,7 @@
 from model_utils.models import SoftDeletableModel
 from django.db import models
 
+
 # Create your models here.
 
 
@@ -86,18 +87,18 @@ class Address(BestPraticesModel):
     def __str__(self):
         return "{}, {}, {}, {} - {}".format(self.street, self.number, self.neighborhood, self.city, self.state)
 
-class cadastro(BestPraticesModel):
-    razão = models.CharField(verbose_name='razão social', max_length=100, blank=True, null=True)
-    dono = models.CharField(verbose_name='nome dono', max_length=100, blank=True, null=True)
-    dt_criacao = models.DateTimeField(auto_now_add=True, )
+class Register(BestPraticesModel):
+    company_name = models.CharField(verbose_name='razão social', max_length=100, blank=True, null=True)
+    owner = models.CharField(verbose_name='nome dono', max_length=100, blank=True, null=True)
+    dt_criation = models.DateTimeField(auto_now_add=True, )
     CNPJ = models.CharField(verbose_name='CNPJ', max_length= 14, blank=True, null=True)
     email =  models.CharField(verbose_name='email', max_length=100, blank=True, null=True)
-    telefone_para_contato = models.CharField(verbose_name='telefone', max_length=20, blank=True, null=True)
-    negocios = models.CharField(verbose_name='tipo de negocio', max_length=200, blank=True, null=True)
-    pais = models.CharField(verbose_name='Pais', max_length=100, blank=True, null=True)
-    estado = models.CharField(verbose_name='Estado', max_length=100, blank=True, null=True)
-    cidade = models.CharField(verbose_name='Cidade', max_length=100, blank=True, null=True)
-    Bairro = models.CharField(verbose_name='Bairro', max_length=100, blank=True, null=True)
-    rua = models.CharField(verbose_name='Rua', max_length=100, blank=True, null=True)
-    numero = models.CharField(verbose_name='Numero', max_length=100, blank=True, null=True)
-    complemento = models.CharField(verbose_name='Complemento', max_length=300, blank=True, null=True)
+    phone = models.CharField(verbose_name='telefone', max_length=20, blank=True, null=True)
+    business = models.CharField(verbose_name='tipo de negocio', max_length=200, blank=True, null=True)
+    country = models.CharField(verbose_name='Pais', max_length=100, blank=True, null=True)
+    state = models.CharField(verbose_name='Estado', max_length=100, blank=True, null=True)
+    city = models.CharField(verbose_name='Cidade', max_length=100, blank=True, null=True)
+    neighborhood = models.CharField(verbose_name='Bairro', max_length=100, blank=True, null=True)
+    street = models.CharField(verbose_name='Rua', max_length=100, blank=True, null=True)
+    number = models.CharField(verbose_name='Numero', max_length=100, blank=True, null=True)
+    complement = models.CharField(verbose_name='Complemento', max_length=300, blank=True, null=True)

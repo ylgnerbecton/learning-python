@@ -7,7 +7,7 @@ admin.site.register(State)
 admin.site.register(City)
 admin.site.register(Neighborhood)
 admin.site.register(Place)
-admin.site.register(cadastro)
+admin.site.register(Register)
 
 
 
