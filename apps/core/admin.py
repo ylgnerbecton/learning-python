@@ -7,6 +7,8 @@ admin.site.register(State)
 admin.site.register(City)
 admin.site.register(Neighborhood)
 admin.site.register(Place)
+admin.site.register(Post)
+admin.site.register(PostTest)
 
 
 

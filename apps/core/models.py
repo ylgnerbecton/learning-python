@@ -85,3 +85,25 @@ class Address(BestPraticesModel):
 
     def __str__(self):
         return "{}, {}, {}, {} - {}".format(self.street, self.number, self.neighborhood, self.city, self.state)
+
+
+class Post(BestPraticesModel):
+    title = models.CharField(verbose_name="Título", max_length=300, blank=True, null=True)
+    text = models.TextField(verbose_name="Texto", blank=True, null=True)
+    published_date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        verbose_name_plural = "Publicação"
+
+    def __str__(self):
+        return "{} - {}".format(self.title, self.published_date)
+
+class PostTest(BestPraticesModel):
+    post = models.ForeignKey(Post, on_delete=models.DO_NOTHING, blank=True, null=True)
+    title = models.CharField(verbose_name="Title", max_length=300, blank=True, null=True)
+ 
+    class Meta:
+        verbose_name_plural = "Publicação Teste"
+
+    def __str__(self):
+        return "ESTE É UM POST TESTE: {} - {}".format(self.post, self.title)
